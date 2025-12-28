@@ -1180,6 +1180,17 @@
                 grid-template-columns: 1fr;
             }
         }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.favicon {
+    width: 30px;     /* favicon size */
+    height: 30px;
+    object-fit: contain;
+}
 
         @media (max-width: 576px) {
             .hero {
@@ -1219,10 +1230,16 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#home" class="logo">
-                    <div class="logo-icon">UP</div>
-                    <span>Udhaya Prakash</span>
-                </a>
+                <nav class="navbar">
+   <nav class="navbar">
+    <a href="#home" class="logo">
+        <img src="assets/img/favicon.ico" alt="UP" class="favicon">
+        <span>Udhaya Prakash</span>
+    </a>
+</nav>
+
+</nav>
+
                 
                 <div class="nav-links">
                     <a href="#home" class="nav-link active">Home</a>
@@ -1231,7 +1248,7 @@
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#certifications" class="nav-link">Certifications</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <a href="Udhayaprakash_J_Resume.pdf" download class="nav-cta">Resume</a>
+                    <a href="assets/Udhayaprakash_J_Resume.pdf" download class="nav-cta">Resume</a>
                 </div>
             </nav>
         </div>
@@ -1263,7 +1280,7 @@
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-envelope"></i> Contact Me
                         </a>
-                        <a href="Udhayaprakash_J_Resume.pdf" download class="btn btn-secondary">
+                        <a href="assets/Udhayaprakash_J_Resume.pdf" download class="btn btn-secondary">
                             <i class="fas fa-download"></i> Download Resume
                         </a>
                     </div>
@@ -1274,11 +1291,11 @@
                             <div class="stat-label">M.Tech CGPA</div>
                         </div>
                         <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                            <div class="stat-number">5+</div>
+                            <div class="stat-number">3+</div>
                             <div class="stat-label">Projects</div>
                         </div>
                         <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                            <div class="stat-number">3</div>
+                            <div class="stat-number">2</div>
                             <div class="stat-label">Certifications</div>
                         </div>
                         <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
@@ -1291,7 +1308,7 @@
                 <div class="profile-card" data-aos="fade-left" data-aos-duration="1000">
                     <div class="profile-photo-container">
                         <div class="profile-photo">
-                       <img src="https://ibb.co/Nd5T94jc">
+                       <img src="assets/img/photo.png">
                             
                         </div>
                     </div>
@@ -1751,8 +1768,8 @@
                     </div>
                     <div class="cert-details">
                         <h3>DevOps Engineering</h3>
-                        <p>Multiple Specializations</p>
-                        <div style="color: var(--secondary); font-size: 0.9rem; font-weight: 600;">Coursera Verified</div>
+                        <p>Learning in Progress</p>
+                        <div style="color: var(--secondary); font-size: 0.9rem; font-weight: 600;">Coursera</div>
                     </div>
                 </div>
             </div>
@@ -1834,7 +1851,7 @@
                     </div>
                     
                     <div style="margin-top: 30px;">
-                        <a href="Udhayaprakash_J_Resume.pdf" download class="btn btn-secondary" style="width: 100%;">
+                        <a href="assets/Udhayaprakash_J_Resume.pdf" download class="btn btn-secondary" style="width: 100%;">
                             <i class="fas fa-download"></i> Download Resume
                         </a>
                     </div>
