@@ -24,7 +24,7 @@ pipeline {
 
         stage('Use Secret (Token Test)') {
             steps {
-                withCredentials([string(credentialsId: 'api-token', variable: 'API_TOKEN')]) {
+                withCredentials([string(credentialsId: 'api-token-1', variable: 'API_TOKEN')]) {
                     bat "echo Secret token injected successfully"
                     // DO NOT print %API_TOKEN%
                 }
