@@ -1,19 +1,18 @@
-@Library('jenkins-shared-library') _
+@Library('shared-lib') _
 
 pipeline {
     agent any
 
     environment {
-        IMAGE_NAME     = "udhaya2705/portfolio-app"
-        IMAGE_TAG      = "${GIT_COMMIT.take(7)}"
-        DOCKER_CREDS   = "docker-creds"
-        PROD_CONTAINER = "portfolio-app-prod"
+        IMAGE_NAME   = "udhaya2705/portfolio-app"
+        IMAGE_TAG    = "${GIT_COMMIT.take(7)}"
+        DOCKER_CREDS = "docker-creds"
     }
 
     stages {
         stage('Build') {
             steps {
-                build(
+                dockerBuild(
                     image: IMAGE_NAME,
                     tag: IMAGE_TAG,
                     dockerCreds: DOCKER_CREDS
@@ -23,21 +22,21 @@ pipeline {
 
         stage('Test') {
             steps {
-                test(
+                dockerTest(
                     image: IMAGE_NAME,
                     tag: IMAGE_TAG,
-                    testContainer: "portfolio-test",
-                    testPort: "8085"
+                    container: "portfolio-test",
+                    port: "8085"
                 )
             }
         }
 
         stage('Deploy') {
             steps {
-                deploy(
+                dockerDeploy(
                     image: IMAGE_NAME,
                     tag: IMAGE_TAG,
-                    container: PROD_CONTAINER,
+                    container: "portfolio-app-prod",
                     port: "8080",
                     dockerCreds: DOCKER_CREDS
                 )
