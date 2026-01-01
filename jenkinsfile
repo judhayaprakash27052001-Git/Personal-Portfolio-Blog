@@ -4,16 +4,15 @@ pipeline {
     agent any
 
     stages {
-
         stage('Build') {
             steps {
-                build("portfolio-app")
+                buildImage()
             }
         }
 
         stage('Test') {
             steps {
-                test("portfolio-app")
+                testImage()
             }
         }
 
@@ -22,7 +21,7 @@ pipeline {
                 branch 'main'
             }
             steps {
-                deploy("portfolio-app", "production")
+                deployImage()
             }
         }
     }
